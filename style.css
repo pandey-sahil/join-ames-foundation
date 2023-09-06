@@ -1,0 +1,116 @@
+@font-face {
+    font-family: a;
+    src: url(./res/manuka-regular.ttf);
+}
+
+@font-face {
+    font-family: b;
+    src: url(./res/manuka-bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* color: white; */
+    font-family: b;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#page1 {
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+    scale: 0.8;
+    border-radius: 10px;
+    background-image: url("https://join.ames-foundation.com/images/bg-texture.webp");
+    background-size: cover;
+    position: relative;
+    background-color: red;
+}
+
+#texture {
+    height: 100%;
+    width: 100%;
+    background-color: #201907;
+    border-radius: 10px;
+    opacity: .6;
+}
+
+#timer {
+    position: absolute;
+    right: 3%;
+    bottom: 5%;
+    width: 260px;
+    height: 115px;
+    width: 14.4vw;
+    height: 6.8vw;
+    text-align: end;
+    /* background-color: aqua; */
+    overflow: hidden;
+
+}
+
+#timer h1 {
+    font-size: 100px;
+    color: white;
+    /* display: none; */
+    font-family: b;
+    /* margin-bottom: 20px; */
+    transition: all ease .8s;
+}
+
+#timer button {
+    font-size: 2.3vw;
+    border-radius: 5px;
+    color: white;
+    opacity: 0;
+    margin-top: -20px;
+    background-color: transparent;
+    border: .25vw solid white;
+    text-transform: uppercase;
+    transition: all ease .8s;
+    padding: 1.6vw 4.5vw;
+    /* text-align: start; */
+}
+
+#page1 .pg1-txt {
+    font-size: 10.5vw;
+    position: absolute;
+    left: 4%;
+    color: #ffffff;
+    top: 21%;
+    text-transform: uppercase;
+}
+.pg1-txt h1:nth-child(1){
+    font-family: a;
+    line-height: 1;
+    margin-bottom: -40px;
+    font-weight: 100;
+}
+
+#page1 .leaf{
+    height: 520px;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.poster{
+    height:390px;
+    z-index: 3;
+    position: absolute;
+    top: 38%;
+    display: none;
+    /* transform-origin: -100%; */
+    /* transition: all ease .8s; */
+    left: 70%;
+    rotate: 3deg;
+    transform: translate(-50%,-50%);
+}

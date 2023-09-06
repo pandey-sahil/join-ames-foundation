@@ -27,7 +27,7 @@ body {
     overflow: hidden;
     width: 100vw;
     scale: 0.8;
-    border-radius: 10px;
+    border-radius: 0.7vw;
     background-image: url("https://join.ames-foundation.com/images/bg-texture.webp");
     background-size: cover;
     position: relative;
@@ -38,7 +38,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: #201907;
-    border-radius: 10px;
+    border-radius: 0.7vw;
     opacity: .6;
 }
 
@@ -46,8 +46,8 @@ body {
     position: absolute;
     right: 3%;
     bottom: 5%;
-    width: 260px;
-    height: 115px;
+    width: 19vw;
+    height: 8.419vw;
     width: 14.4vw;
     height: 6.8vw;
     text-align: end;
@@ -57,7 +57,7 @@ body {
 }
 
 #timer h1 {
-    font-size: 100px;
+    font-size: 7.32vw;
     color: white;
     /* display: none; */
     font-family: b;
@@ -67,10 +67,10 @@ body {
 
 #timer button {
     font-size: 2.3vw;
-    border-radius: 5px;
+    border-radius: 0.36vw;
     color: white;
     opacity: 0;
-    margin-top: -20px;
+    margin-top: -1.4vw;
     background-color: transparent;
     border: .25vw solid white;
     text-transform: uppercase;
@@ -90,12 +90,12 @@ body {
 .pg1-txt h1:nth-child(1){
     font-family: a;
     line-height: 1;
-    margin-bottom: -40px;
+    margin-bottom: -2.9vw;
     font-weight: 100;
 }
 
 #page1 .leaf{
-    height: 520px;
+    height: 38vw;
     z-index: 3;
     position: absolute;
     top: 50%;
@@ -103,7 +103,7 @@ body {
     transform: translate(-50%,-50%);
 }
 .poster{
-    height:390px;
+    height: 28.551vw;
     z-index: 3;
     position: absolute;
     top: 38%;

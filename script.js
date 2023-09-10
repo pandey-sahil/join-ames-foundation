@@ -65,6 +65,18 @@ function countdown() {
     btn.addEventListener("click", function () {
         document.querySelector("#page1").style.borderRadius = "0"
         document.querySelector(".poster").style.display = "initial"
+        gsap.to("#pg1-left-text",{
+            display: "initial",
+            opacity:1,
+            duration:0.5,
+            delay:.5
+        })
+        gsap.to(".sticker",{
+            display: "initial",
+            opacity:1,
+            duration:0.5,
+            delay:.5
+        })
         // play audio by this line
         audio.play()
         gsap.to("#page1", {
@@ -155,7 +167,8 @@ h1.forEach(function (elem) {
 //       end: "top -5%",
 //       scrub: 2,
 // })
-gsap.to("#pg3-text h1 span",{
+tl = gsap.timeline()
+tl.to("#pg3-text h1 span",{
     color:"#000",
     stagger:0.1,
     duration:.5,
@@ -171,15 +184,15 @@ gsap.to("#pg3-text h1 span",{
 })
 
 
-// gsap.to("#scroller",{
-//     transform:"translateX(-100%)",
-//     scrollTrigger:{
-//         start:"top 0%",
-//         end:"top -100%",
-//         trigger:"#scroller",
-//         scroller:"#main",
-//         // markers:true,
-//         pin:true,
-//         scrub:2
-//     }
-// })
+tl.to("#scroller",{
+    transform:"translateX(-60%)",
+    scrollTrigger:{
+        start:"top -10%",
+        end:"top -100%",
+        trigger:"#scroller",
+        scroller:"#main",
+        // markers:true,
+        pin:true,
+        scrub:2
+    }
+})

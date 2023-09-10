@@ -63,22 +63,21 @@ function countdown() {
 
     var leafs = document.querySelector("#page1 .leaf")
     btn.addEventListener("click", function () {
+        audio.play()
         document.querySelector("#page1").style.borderRadius = "0"
         document.querySelector(".poster").style.display = "initial"
-        gsap.to("#pg1-left-text",{
+        gsap.to("#pg1-left-text", {
             display: "initial",
-            opacity:1,
-            duration:0.5,
-            delay:.5
+            opacity: 1,
+            duration: 0.5,
+            delay: .5
         })
-        gsap.to(".sticker",{
+        gsap.to(".sticker", {
             display: "initial",
-            opacity:1,
-            duration:0.5,
-            delay:.5
+            opacity: 1,
+            duration: 0.5,
+            delay: .5
         })
-        // play audio by this line
-        audio.play()
         gsap.to("#page1", {
             scale: 1,
             duration: 0.5
@@ -102,97 +101,77 @@ function countdown() {
             opacity: 1,
             delay: 0.5,
             duration: 0.5,
-          });
-          gsap.to("#main", {
+        });
+        gsap.to("#main", {
             overflow: "auto",
-          });
+        });
     })
 
 }
 countdown()
 loco()
 
-gsap.to(".logo",{
+gsap.to(".logo", {
     fill: "#000",
-    scrollTrigger:{
-        trigger:"#pg3-text",
-        scroller:"#main",
-        start:"top 80%",
-        scrub:.1,
-        end:"top 65%",
-        markers:true
+    scrollTrigger: {
+        trigger: "#pg3-text",
+        scroller: "#main",
+        start: "top 80%",
+        scrub: .1,
+        end: "top 65%"
     }
 })
 
-gsap.to("#page2 video",{
+gsap.to("#page2 video", {
     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-    opacity:1,
-    scrollTrigger:{
-        trigger:"video",
-        scroller:"#main",
-        start:"top 80%",
-        scrub:.1,
-        end:"top 65%",
-        markers:true
+    opacity: 1,
+    scrollTrigger: {
+        trigger: "video",
+        scroller: "#main",
+        start: "top 80%",
+        scrub: .1,
+        end: "top 65%"
     }
 })
 
 
-    var clutter = "";
-
-// document.querySelector("#pg3-text>h1").textContent.split("").forEach(function(dets){
-//     clutter += `<span>${dets}</span>`
-
-//     document.querySelector("#pg3-text>h1").innerHTML = clutter;
-// })
-
+var clutter = "";
 var h1 = document.querySelectorAll("#pg3-text h1");
 h1.forEach(function (elem) {
-  var textCon = elem.textContent;
-  var splitedText = textCon.split("");
-  var clutter = "";
-  splitedText.forEach(function (e) {
-    clutter += `<span>${e}</span>`;
-  });
-  elem.innerHTML = clutter;
+    var textCon = elem.textContent;
+    var splitedText = textCon.split("");
+    var clutter = "";
+    splitedText.forEach(function (e) {
+        clutter += `<span>${e}</span>`;
+    });
+    elem.innerHTML = clutter;
 });
 
-// gsap.to("#pg3-text h1 span",{
-//     color: "#e3e3c4",
-//     stagger: 0.3,
-//     scrollTrigger: {
-//       trigger: "#page2 h2 span",
-//       scroller: "#main",
-//       start: "top 55%",
-//       end: "top -5%",
-//       scrub: 2,
-// })
 tl = gsap.timeline()
-tl.to("#pg3-text h1 span",{
-    color:"#000",
-    stagger:0.1,
-    duration:.5,
-    ease:Expo.easeInOut,
-    scrollTrigger:{
+tl.to("#pg3-text h1 span", {
+    color: "#000",
+    stagger: 0.1,
+    duration: .5,
+    ease: Expo.easeInOut,
+    scrollTrigger: {
         trigger: "#page3 h1 span",
-        start:"top 65%",
-        end:"top 15%",
-        scroller:"#main",
-        scrub:3,
+        start: "top 65%",
+        end: "top 15%",
+        scroller: "#main",
+        scrub: 3,
         // pin:true
     }
 })
 
 
-tl.to("#scroller",{
-    transform:"translateX(-60%)",
-    scrollTrigger:{
-        start:"top -10%",
-        end:"top -100%",
-        trigger:"#scroller",
-        scroller:"#main",
-        // markers:true,
-        pin:true,
-        scrub:2
+tl.to("#scroller", {
+    transform: "translateX(-60%)",
+    scrollTrigger: {
+        start: "top -10%",
+        end: "top -100%",
+        trigger: "#scroller",
+        scroller: "#main",
+        pin: true,
+        scrub: 2
     }
 })

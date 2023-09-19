@@ -40,7 +40,7 @@ function loco() {
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
 
-    // window.stop();
+//    document.querySelector("#main").stop();
 }
 
 
@@ -118,16 +118,26 @@ countdown()
 loco()
 
 // this is for page3 when the scroller reaches to page 3 the logo color will be black
-// gsap.to(".logo", {
-//     fill: "#000",
-//     scrollTrigger: {
-//         trigger: "#pg3-text",
-//         scroller: "#main",
-//         start: "top 80%",
-//         scrub: .1,
-//         end: "top 65%"
-//     }
-// })
+gsap.to(".logo,#nav-part2>h4", {
+    fill: "#000",
+    scrollTrigger: {
+        trigger: "#page3-part1",
+        scroller: "#main",
+        start: "top 10%",
+        scrub: .1,
+        end: "top 0%"
+    }
+})
+gsap.to("#nav-part2>h4", {
+    fill: "#000",
+    scrollTrigger: {
+        trigger: "#page3-part1",
+        scroller: "#main",
+        start: "top 10%",
+        scrub: .1,
+        end: "top 0%"
+    }
+})
 
 // // This is for video animation of page2
 gsap.to("#page2 video", {
@@ -143,36 +153,38 @@ gsap.to("#page2 video", {
 })
 
 // // color animation of text in page3
-// function textAnimation() {
-//     var clutter = ""
-//     var h1Text = document.querySelector("#page3-part1 h1").textContent
-//     var splitedText = h1Text.split("")
-//     splitedText.forEach(function (elem) {
-//         clutter += `<span>${elem}</span>`
-//     })
-//     document.querySelector("#page3-part1 h1").innerHTML = clutter
+function textAnimation() {
+    var clutter = ""
+    var h1Text = document.querySelector("#page3-part1 h1").textContent
+    var splitedText = h1Text.split("")
+    splitedText.forEach(function (elem) {
+        clutter += `<span>${elem}</span>`
+    })
+    document.querySelector("#page3-part1 h1").innerHTML = clutter
 
-//     var tl = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: "#page3",
-//             scroller: "body",
-//             start: "top 0%",
-//             end: "top -100%",
-//             pin: true,
-//             scrub: 2,
-//             markers: true
-//         }
-//     })
-//     tl.to("#page3-part1 h1 span", {
-//         color: "#000",
-//         stagger: 0.1,
-//     })
-//     tl.to("#page3-part1", {
-//         transform: "translateX(-100vw)"
-//     }, "anim1")
-//     tl.to("#page3-part2", {
-//         transform: "translateX(-100vw)"
-//     }, "anim1")
-// }
-// textAnimation()
+    var tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#page3",
+            scroller: "#main",
+            start: "top 0%",
+            end: "top -400%",
+            pin: true,
+            scrub: .2,
+            markers: true
+        }
+    })
+    tl.to("#page3-part1 h1 span", {
+        color: "#000",
+        stagger: 0.1,
+    })
+    tl.to("#page3-part1", {
+        transform: "translateX(-100vw)",
+        duration:10
+    }, "anim1")
+    tl.to("#page3-part2", {
+        transform: "translateX(-100vw)",
+        duration:10
+    }, "anim1")
+}
+textAnimation()
 

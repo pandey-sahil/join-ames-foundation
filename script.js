@@ -1,5 +1,6 @@
 var audio = new Audio("./res/african-savanna.mp3");
 
+// Added Locomotive scrolling for smooth scrolling
 function loco() {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -38,14 +39,20 @@ function loco() {
 
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
+
+    // window.stop();
 }
 
+
+//this function consists the button click animation and the timer animation 
 function countdown() {
     var h1 = document.querySelector("#timer h1")
     var btn = document.querySelector("#timer button")
     var grow = 0
 
-    inte = setInterval(function () {
+
+    //for the timer countdown
+    var inte = setInterval(function () {
         if (grow < 90) {
             grow += Math.floor(Math.random() * 20)
             h1.innerHTML = grow + "%"
@@ -60,11 +67,12 @@ function countdown() {
         }
     }, Math.floor(Math.random() * 300))
 
-
-    var leafs = document.querySelector("#page1 .leaf")
+    // button click animation
+    var leafs = document.querySelector(".leaf")
     btn.addEventListener("click", function () {
-        audio.play()
-        document.querySelector("#page1").style.borderRadius = "0"
+        audio.play();
+        // window.start();
+        document.querySelector("#content,#texture").style.borderRadius = "0"
         document.querySelector(".poster").style.display = "initial"
         gsap.to("#pg1-left-text", {
             display: "initial",
@@ -78,50 +86,50 @@ function countdown() {
             duration: 0.5,
             delay: .5
         })
-        gsap.to("#page1", {
-            scale: 1,
-            duration: 0.5
-        })
-        gsap.to("#timer", {
-            opacity: 0
-        });
         gsap.to(leafs, {
             rotate: "-5deg",
             duration: 0.8
 
         })
         gsap.from(".poster", {
+            opacity:0,
             rotate: "-5deg",
             height: 0,
             duration: 0.8
         })
-
         gsap.to("#nav", {
             top: 0,
             opacity: 1,
             delay: 0.5,
             duration: 0.5,
         });
-        gsap.to("#main", {
-            overflow: "auto",
-        });
-    })
 
+        gsap.to("#content", {
+            scale: 1,
+            duration: 0.5
+        })
+        gsap.to("#timer", {
+            opacity: 0
+        });
+
+    })
 }
 countdown()
 loco()
 
-gsap.to(".logo", {
-    fill: "#000",
-    scrollTrigger: {
-        trigger: "#pg3-text",
-        scroller: "#main",
-        start: "top 80%",
-        scrub: .1,
-        end: "top 65%"
-    }
-})
+// this is for page3 when the scroller reaches to page 3 the logo color will be black
+// gsap.to(".logo", {
+//     fill: "#000",
+//     scrollTrigger: {
+//         trigger: "#pg3-text",
+//         scroller: "#main",
+//         start: "top 80%",
+//         scrub: .1,
+//         end: "top 65%"
+//     }
+// })
 
+// // This is for video animation of page2
 gsap.to("#page2 video", {
     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
     opacity: 1,
@@ -134,44 +142,37 @@ gsap.to("#page2 video", {
     }
 })
 
+// // color animation of text in page3
+// function textAnimation() {
+//     var clutter = ""
+//     var h1Text = document.querySelector("#page3-part1 h1").textContent
+//     var splitedText = h1Text.split("")
+//     splitedText.forEach(function (elem) {
+//         clutter += `<span>${elem}</span>`
+//     })
+//     document.querySelector("#page3-part1 h1").innerHTML = clutter
 
-var clutter = "";
-var h1 = document.querySelectorAll("#pg3-text h1");
-h1.forEach(function (elem) {
-    var textCon = elem.textContent;
-    var splitedText = textCon.split("");
-    var clutter = "";
-    splitedText.forEach(function (e) {
-        clutter += `<span>${e}</span>`;
-    });
-    elem.innerHTML = clutter;
-});
+//     var tl = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: "#page3",
+//             scroller: "body",
+//             start: "top 0%",
+//             end: "top -100%",
+//             pin: true,
+//             scrub: 2,
+//             markers: true
+//         }
+//     })
+//     tl.to("#page3-part1 h1 span", {
+//         color: "#000",
+//         stagger: 0.1,
+//     })
+//     tl.to("#page3-part1", {
+//         transform: "translateX(-100vw)"
+//     }, "anim1")
+//     tl.to("#page3-part2", {
+//         transform: "translateX(-100vw)"
+//     }, "anim1")
+// }
+// textAnimation()
 
-tl = gsap.timeline()
-tl.to("#pg3-text h1 span", {
-    color: "#000",
-    stagger: 0.1,
-    duration: .5,
-    ease: Expo.easeInOut,
-    scrollTrigger: {
-        trigger: "#page3 h1 span",
-        start: "top 65%",
-        end: "top 15%",
-        scroller: "#main",
-        scrub: 3,
-        // pin:true
-    }
-})
-
-
-tl.to("#scroller", {
-    transform: "translateX(-60%)",
-    scrollTrigger: {
-        start: "top -10%",
-        end: "top -100%",
-        trigger: "#scroller",
-        scroller: "#main",
-        pin: true,
-        scrub: 2
-    }
-})

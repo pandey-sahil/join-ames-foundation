@@ -1,11 +1,13 @@
 @font-face {
-    font-family: a;
+    font-family: manuka;
     src: url(./res/manuka-regular.ttf);
+    font-weight: 300;
 }
 
 @font-face {
-    font-family: b;
+    font-family: manuka;
     src: url(./res/manuka-bold.ttf);
+    font-weight: 600;
 }
 
 @font-face {
@@ -17,8 +19,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* color: white; */
-    font-family: b;
+    font-family: manuka;
+    color: white;
 }
 
 html,
@@ -27,9 +29,7 @@ body {
     width: 100%;
 }
 
-#main {
-    overflow: hidden;
-}
+
 
 #nav {
     width: 100%;
@@ -72,56 +72,116 @@ body {
 
 #page1 {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
+    /* background-color: lightblue; */
+    /* background-image: ; */
+
+}
+
+#content {
+    height: 100vh;
+    background-image: url(https://join.ames-foundation.com/images/bg-texture.webp);
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
     scale: 0.8;
-    background-color: #241f11;
-    /* background-image: url(https://join.ames-foundation.com/images/bg-texture.webp); */
-    border-radius: 0.366vw;
-    /* background-color: lightseagreen; */
-    position: relative;
+    background-color: lightcoral;
+    border-radius: 5px;
 }
 
 #texture {
     height: 100%;
-    width: 100%;
-    background-image: url(./bg-texture.jpg);
-    opacity: 0.5;
-    position: absolute;
+    background-color: #2b241294;
+    /* display: flex; */
+    border-radius: 5px;
+    padding: 3vw;
+    padding-top: 13.5vw;
 }
 
+#texture>h1 {
+    font-size: 16vw;
+    color: white;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 20vw;
+    line-height: 18vw;
+}
+
+#texture h1>span {
+    font-weight: 900;
+}
+
+.leaf {
+    height: 38vw;
+    z-index: 99;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.poster {
+    height: 28.551vw;
+    z-index: 3;
+    position: absolute;
+    top: 38%;
+    display: none;
+    opacity: 1;
+    left: 70%;
+    rotate: 3deg;
+    transform: translate(-50%, -50%);
+}
+
+
+.sticker {
+    position: absolute;
+    height: 9.51vw;
+    display: none;
+    z-index: 99;
+    transition: all ease .5s;
+    top: 60%;
+    left: 53%;
+    rotate: -3deg;
+}
+
+.sticker div {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.stick {
+    height: 100%;
+    opacity: .9;
+}
+
+.sticker div h1 {
+    position: absolute;
+    color: white;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: a;
+    top: 50%;
+    font-family: manuka;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
 #timer {
     position: absolute;
     right: 3%;
     bottom: 5%;
-    width: 19vw;
     height: 8.419vw;
-    width: 25.4vw;
+    width: 15vw;
     height: 6.8vw;
     text-align: end;
-    /* background-color: rgb(86, 126, 126); */
     overflow: hidden;
 
 }
 
 #timer h1 {
     font-size: 7.32vw;
-    color: white;
-    font-family: b;
     transition: all ease .8s;
-}
-
-#timer button {
-    font-size: 2.3vw;
-    border-radius: 0.36vw;
-    color: white;
-    opacity: 0;
-    margin-top: -1.4vw;
-    background-color: transparent;
-    border: .25vw solid white;
-    text-transform: uppercase;
-    transition: all ease .8s;
-    padding: 1.6vw 4.5vw;
-    z-index: 999;
 }
 
 #timer button {
@@ -135,10 +195,11 @@ body {
     transition-delay: 1s;
     transition: all ease 0.8s;
     font-weight: 900;
-    /* margin-left: -5vw; */
+    margin-top: -1.4vw;
     opacity: 0;
     position: relative;
     overflow: hidden;
+    z-index: 999;
 }
 
 #timer button::after {
@@ -147,7 +208,6 @@ body {
     width: 100%;
     background-color: #fff;
     position: absolute;
-    /* top: 0; */
     bottom: -100%;
     transition: all ease 0.4s;
     left: 0;
@@ -167,239 +227,72 @@ body {
     color: #000;
 }
 
-#page1 .pg1-txt {
-    position: relative;
-    z-index: 9;
-    color: #fff;
-    padding: 4vw 4vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    padding-top: 10vw;
-}
-
-.pg1-txt h1 {
-    font-weight: 100;
-    text-transform: uppercase;
-    font-size: 20vw;
-    line-height: 18vw;
-}
-
-.pg1-txt h1:nth-child(1) {
-    font-family: a;
-    line-height: 1;
-    margin-bottom: -2.9vw;
-    font-weight: 100;
-}
-
 #pg1-left-text {
     height: 5.1vw;
-    /* padding-top: 3vw; */
-    width: 30vw;
+    width: 33vw;
     display: none;
+    position: absolute;
+    right: 5%;
+    bottom: 4%;
     transition: all ease .5s;
     opacity: 0;
-    /* background-color: lightskyblue; */
 }
 
 #pg1-left-text h5 {
-    font-size: 1.1vw;
-    font-weight: 500;
+    font-size: 1.2vw;
+    font-weight: 400;
     word-wrap: none;
     color: rgb(255, 255, 255);
     font-family: montserrat;
 }
-
-.leaf {
-    height: 38vw;
-    z-index: 99;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#page2{
+    height: 120vh;
+    position: relative;
+     width: 100%;
+}
+#page2 #page2-text{
+    height: 50vh;
+    width: 100vw;
+    background-image: url(https://join.ames-foundation.com/images/bg-texture.webp);
+    background-position: bottom;
+    background-size: cover;
 }
 
-.sticker {
-    position: absolute;
-    height: 9.51vw;
-    display: none;
-    z-index: 99;
-    transition: all ease .5s;
-    top: 60%;
-    left: 53%;
-    rotate: -3deg;
-}
-
-.sticker div {
+#page2-text>#texture{
+    padding: 2vw;
+    height: 100;
+    overflow: hidden;
+    width: 100vw;
     height: 100%;
-    width: 100%;
-    /* background-color: red; */
-    position: relative;
 }
-
-.stick {
-    height: 100%;
-    opacity: .9;
+#page2-text>#texture>h3{
+    font-size: 2vw;
+    display: flex;
+    margin-top: 3vw;
+    margin-left: 5vw;
+    align-items: start;
+    /* justify-content:center ; */
+    /* margin-bottom: -10vw; */
+    gap: 5px;
 }
-
-.sticker div h1 {
-    position: absolute;
-    color: white;
-    font-weight: 100;
-    text-transform: uppercase;
-    font-family: a;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    z-index: 999;
+#page2-text>#texture>h3 span{
+    border: 1px solid white;
+    padding: 5px 10px;
+    font-size: 1vw;
+    border-radius: 50%;
+    margin-right: .4vw;
+    
 }
-
-.poster {
-    height: 28.551vw;
-    z-index: 3;
-    position: absolute;
-    top: 38%;
-    display: none;
-    /* transform-origin: -100%; */
-    /* transition: all ease .8s; */
-    left: 70%;
-    rotate: 3deg;
-    transform: translate(-50%, -50%);
-}
-
-#page2 {
-    height: 100vh;
-    width: 100%;
-    background-color: #ffffff;
-    /* background-image: url(https://join.ames-foundation.com/images/bg-texture.webp); */
-    /* background-color: lightseagreen; */
-    position: relative;
-}
-
-#pg2-part1 {
-    height: 53vh;
-    width: 100%;
-    background-color: #241f11;
-    /* background-image: url(https://join.ames-foundation.com/images/bg-texture.webp); */
-    /* background-color: lightseagreen; */
-    position: relative;
-}
-
-
-#page2 video {
-    width: 96%;
-    height: 95%;
-    position: absolute;
-    top: 15%;
-    z-index: 9;
-    opacity: 0;
-    left: 2%;
-    object-fit: cover;
+#page2 video{
+    /* position: absolute; */
+    width: 94vw;
     transition: all ease 1s;
     clip-path: polygon(0 100%, 100% 60%, 100% 100%, 0% 100%);
-}
-
-#pg2-part1 h1 {
-    font-size: 1.7vw;
-    color: #fff;
-    margin-left: 3vw;
-    padding-top: 4vw;
-}
-
-#pg2-part1 h1 span {
-    background-color: rgb(255, 255, 255);
-    font-size: 1.4vw;
-    padding: .6vw .85vw;
-    border-radius: 50%;
-    margin-right: 1vw;
-    color: #000;
-}
-
-
-#page3 {
-    height: 100%;
-    width: 100vw;
-    display: flex;
-    /* background-color: red; */
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-
-    justify-content: center;
-}
-
-#page3 #pg3-text {
-    /* background-color: salmon; */
-    padding: 2.19vw 0;
-    /* margin-top: 7vw; */
-}
-
-#page3 h1 {
-    /* margin-top: .5vw; */
-    color: rgba(0, 0, 0, 0.152);
-
-    font-size: 4.75vw;
-    /* text-align: left; */
-
-}
-
-#pg3-text h1:nth-child(1) {
-    margin-top: 0;
-}
-
-#scroller {
-    display: flex;
-    height: 110vh;
-    background-color: #f8f0ec;
-    width: 300vw;
-
-    flex-wrap: nowrap;
-
-}
-
-#scroller-pg2 {
-    height: 100%;
-    width: 100vw;
-    position: relative;
-    flex-shrink: 0;
-    background-color: #f8f0ec;
-
-}
-
-#scroller-pg2 img {
     object-fit: cover;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .5));
-    position: absolute;
+    transform: translateY(-30%)translateX(3%);
+    height: 98vh;
 }
-
-#scroller-pg2 .sunset {
-    width: 435px;
-    top: 0%;
-    left: 17%;
-    rotate: 2deg;
-    height: 655px;
-}
-
-#scroller-pg2 .land {
-    width: 602px;
-    height: 430px;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.356));
-
-    bottom: 0.2%;
-    left: 43%;
-}
-#scroller-pg2 .kachra {
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.356));
-    top: 8%;
-    /* bottom: 0.2%; */
-    left: 80%;
-    z-index: 5;
-    opacity: .9;
-    row-gap: 3deg;
-}
-#scroller-pg2 .rino{
-    left: 92%;
-    top: 20%;
-    rotate: -2deg;
+#page3{
+    height: 100vh;
+    width: 100vw;
 }

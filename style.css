@@ -29,7 +29,7 @@ body {
     width: 100%;
 }
 
-#main{
+#main {
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -171,6 +171,7 @@ body {
     transform: translate(-50%, -50%);
     z-index: 999;
 }
+
 #timer {
     position: absolute;
     right: 3%;
@@ -249,15 +250,17 @@ body {
     color: rgb(255, 255, 255);
     font-family: montserrat;
 }
-#page2{
+
+#page2 {
     height: 120vh;
     position: relative;
-     width: 100%;
+    width: 100%;
     background-color: #f8f0ec;
 
-     overflow: hidden;
+    overflow: hidden;
 }
-#page2 #page2-text{
+
+#page2 #page2-text {
     height: 50vh;
     width: 100vw;
     background-image: url(https://join.ames-foundation.com/images/bg-texture.webp);
@@ -265,32 +268,32 @@ body {
     background-size: cover;
 }
 
-#page2-text>#texture{
+#page2-text>#texture {
     padding: 2vw;
     height: 100;
     overflow: hidden;
     width: 100vw;
     height: 100%;
 }
-#page2-text>#texture>h3{
+
+#page2-text>#texture>h3 {
     font-size: 2vw;
     display: flex;
     margin-top: 3vw;
     margin-left: 5vw;
-    align-items: start;
-    /* justify-content:center ; */
-    /* margin-bottom: -10vw; */
     gap: 5px;
 }
-#page2-text>#texture>h3 span{
+
+#page2-text>#texture>h3 span {
     border: 1px solid white;
     padding: 5px 10px;
     font-size: 1vw;
     border-radius: 50%;
     margin-right: .4vw;
-    
+
 }
-#page2 video{
+
+#page2 video {
     /* position: absolute; */
     width: 94vw;
     transition: all ease 1s;
@@ -299,35 +302,39 @@ body {
     transform: translateY(-30%)translateX(3%);
     height: 98vh;
 }
-#page3{
+
+#page3 {
     height: 100vh;
     overflow-x: scroll;
     background-color: #f8f0ec;
     width: 300vw;
     display: flex;
     flex-shrink: 0;
-    
+
     align-items: center;
 }
-#page3-part1{
+
+#page3-part1 {
     height: 100vh;
     width: 100vw;
     flex-shrink: 0;
 
     padding: 8vw 4vw;
 }
-#page3-part1 h1{
+
+#page3-part1 h1 {
     color: #0000004f;
     font-size: 5.17vw;
 }
-#page3-part1 h1 span{
+
+#page3-part1 h1 span {
     color: #e2dbd5;
     font-size: 5.17vw;
 }
-#page3-part2{
+
+#page3-part2 {
     height: 100vh;
     width: 100vw;
-    /* background-color: rgb(255, 119, 0); */
 }
 
 #page3-part2 img {
@@ -343,6 +350,7 @@ body {
     rotate: 2deg;
     height: 655px;
 }
+
 .land {
     width: 602px;
     height: 410px;
@@ -350,7 +358,8 @@ body {
     bottom: .5%;
     left: 38%;
 }
-#page3-part3{
+
+#page3-part3 {
     height: 100vh;
     width: 100vw;
     background-color: lightpink;

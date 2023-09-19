@@ -40,7 +40,7 @@ function loco() {
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
 
-//    document.querySelector("#main").stop();
+    //    document.querySelector("#main").stop();
 }
 
 
@@ -92,7 +92,7 @@ function countdown() {
 
         })
         gsap.from(".poster", {
-            opacity:0,
+            opacity: 0,
             rotate: "-5deg",
             height: 0,
             duration: 0.8
@@ -179,11 +179,11 @@ function textAnimation() {
     })
     tl.to("#page3-part1", {
         transform: "translateX(-100vw)",
-        duration:10
+        duration: 10
     }, "anim1")
     tl.to("#page3-part2", {
         transform: "translateX(-100vw)",
-        duration:10
+        duration: 10
     }, "anim1")
 }
 textAnimation()

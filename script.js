@@ -39,10 +39,12 @@ function loco() {
 
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
-
-    //    document.querySelector("#main").stop();
+ locoScroll.stop();
+ document.querySelector("#timer button").addEventListener("click", function () {
+    locoScroll.start();
+ })
 }
-
+loco()
 
 //this function consists the button click animation and the timer animation 
 function countdown() {
@@ -71,7 +73,7 @@ function countdown() {
     var leafs = document.querySelector(".leaf")
     btn.addEventListener("click", function () {
         audio.play();
-        // window.start();
+        // locoScroll.start();
         document.querySelector("#content,#texture").style.borderRadius = "0"
         document.querySelector(".poster").style.display = "initial"
         gsap.to("#pg1-left-text", {
@@ -115,7 +117,7 @@ function countdown() {
     })
 }
 countdown()
-loco()
+
 
 // this is for page3 when the scroller reaches to page 3 the logo color will be black
 gsap.to(".logo,#nav-part2>h4", {

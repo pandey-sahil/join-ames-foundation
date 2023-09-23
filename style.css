@@ -56,7 +56,7 @@ body {
 #music-bar{
     height: 10px;
     scale: 1.2;
-    gap: 2px;
+    gap: 1px;
     align-items: end;
     overflow: hidden;
     display: flex;
@@ -64,8 +64,9 @@ body {
 #music-bar .bars{
     fill: white;
     height: 20%;
-    background-color: wheat;
-    width: 1.8px;
+    background-color: rgb(255, 255, 255);
+    width: 2px;
+    border-radius: 10px;
     transition: all linear .5s;
     animation-timing-function: linear;
 }
@@ -93,9 +94,6 @@ body {
 #page1 {
     height: 100vh;
     width: 100vw;
-    /* background-color: lightblue; */
-    /* background-image: ; */
-
 }
 
 #content {
@@ -360,7 +358,7 @@ body {
 
 #page3-part2 {
     height: 100vh;
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
     width: 180vw;
     position: relative;
 }
@@ -411,12 +409,13 @@ body {
     height: 100vh;
     width: 200vw;
     padding: 5vw;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
 }
 #scroller-top-text h1{
     /* background-color: #f8f0ec; */
     font-size: 10vw;
     margin-top: -20px;
+    color: #000;
     /* line-height: -5px; */
     font-weight: 100;
 
@@ -432,16 +431,19 @@ body {
     /* font-size: 7vw; */
     font-weight: 800;
 
+    color: #000;
+
 }
 #scroller-bottom-text{
     height: 8vw;
     margin-top: 5vw;
     margin-left: 41vw;
     width: 41vw;
-    background-color: rgb(32, 70, 70);
+    /* background-color: rgb(32, 70, 70); */
 }
 #scroller-bottom-text h3{
     font-size: 1.12vw;
     font-weight: 400;
     font-family: monteserrat;
+    color: #000;
 }

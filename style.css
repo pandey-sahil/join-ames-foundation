@@ -408,6 +408,7 @@ body {
 #page3-part3{
     height: 100vh;
     width: 200vw;
+    position: relative;
     padding: 5vw;
     /* background-color: rebeccapurple; */
 }
@@ -427,23 +428,35 @@ body {
 
 }
 #scroller-top-text h1 span{
-    /* background-color: #f8f0ec; */
-    /* font-size: 7vw; */
     font-weight: 800;
-
     color: #000;
 
 }
 #scroller-bottom-text{
     height: 8vw;
     margin-top: 5vw;
-    margin-left: 41vw;
+    margin-left: 38vw;
     width: 41vw;
-    /* background-color: rgb(32, 70, 70); */
 }
 #scroller-bottom-text h3{
     font-size: 1.12vw;
     font-weight: 400;
     font-family: monteserrat;
     color: #000;
+}
+#page3-part3 img{
+    position: absolute;
+    
+    top: 0;
+    object-fit: cover;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .5));
+    position: absolute;
+    transition: all ease 1s;
+}
+#page3-part3 .selmon{
+    rotate: 2deg;
+    top: -15%;
+    left: 30%;
+    height: 40vw;
+    width: 80vw;
 }

@@ -53,7 +53,30 @@ body {
     fill: #fff;
     width: 10vw;
 }
-
+#music-bar{
+    height: 10px;
+    /* width: 15px; */
+    scale: 1.2;
+    gap: 1px;
+    align-items: end;
+    overflow: hidden;
+    /* background-color: red; */
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-content: space-between;
+}
+#music-bar .bars{
+    fill: white;
+    /* height: 15%; */
+    background-color: wheat;
+    width: 2px;
+    transition: all linear .5s;
+    animation-timing-function: ease-in-out;
+}
+#music-bar svg path{
+    height: 30px;
+    width: 50vw;
+}
 #nav .country {
     width: 1.3vw;
     fill: #fff;

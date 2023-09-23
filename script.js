@@ -39,12 +39,12 @@ function loco() {
 
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
- locoScroll.stop();
- document.querySelector("#timer button").addEventListener("click", function () {
-    locoScroll.start();
- })
+    locoScroll.stop();
+    document.querySelector("#timer button").addEventListener("click", function () {
+        locoScroll.start();
+    })
 }
-loco()
+loco();
 
 //this function consists the button click animation and the timer animation 
 function countdown() {
@@ -116,31 +116,62 @@ function countdown() {
 
     })
 }
-countdown()
+countdown();
 
+function navAnimation() {
+    // this is for page3 when the scroller reaches to page 3 the logo color will be black
+    gsap.to(".logo,#nav-part2>h4,svg, .bars", {
+        fill: "#000",
+        // backgroundColor: "#000",
+        color: '#000',
+        scrollTrigger: {
+            trigger: "#page3-part1",
+            scroller: "#main",
+            start: "top 10%",
+            scrub: .1,
+            end: "top 0%"
+        }
+    })
+    gsap.to(".bars", {
+        // fill: "#000",
+        backgroundColor: "#000",
+        // color: '#000',
+        scrollTrigger: {
+            trigger: "#page3-part1",
+            scroller: "#main",
+            start: "top 10%",
+            scrub: .1,
+            end: "top 0%"
+        }
+    })
+    gsap.to("#nav-part2>h4", {
+        fill: "#000",
+        scrollTrigger: {
+            trigger: "#page3-part1",
+            scroller: "#main",
+            start: "top 10%",
+            scrub: .1,
+            end: "top 0%"
+        }
+    })
 
-// this is for page3 when the scroller reaches to page 3 the logo color will be black
-gsap.to(".logo,#nav-part2>h4", {
-    fill: "#000",
-    scrollTrigger: {
-        trigger: "#page3-part1",
-        scroller: "#main",
-        start: "top 10%",
-        scrub: .1,
-        end: "top 0%"
-    }
-})
-gsap.to("#nav-part2>h4", {
-    fill: "#000",
-    scrollTrigger: {
-        trigger: "#page3-part1",
-        scroller: "#main",
-        start: "top 10%",
-        scrub: .1,
-        end: "top 0%"
-    }
-})
+    var grownav = 0
+    setInterval(function () {
+        if (grownav < 120) {
+            grownav += Math.floor(Math.random() * 7)
+            gsap.to(".bars", {
+                height: grownav + `%`,
+                stagger: 1
+            })
+        }
+        else {
+            console.log("lol")
+            grownav = 0
+        }
+    }, 40)
 
+}
+navAnimation();
 // // This is for video animation of page2
 gsap.to("#page2 video", {
     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
@@ -188,5 +219,5 @@ function textAnimation() {
         duration: 10
     }, "anim1")
 }
-textAnimation()
+textAnimation();
 

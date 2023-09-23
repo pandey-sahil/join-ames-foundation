@@ -118,12 +118,9 @@ function countdown() {
 }
 countdown();
 
-function navAnimation() {
+function navAnimations() {
     // this is for page3 when the scroller reaches to page 3 the logo color will be black
-    gsap.to(".logo,#nav-part2>h4,svg, .bars", {
-        fill: "#000",
-        // backgroundColor: "#000",
-        color: '#000',
+    var navtl = gsap.timeline({
         scrollTrigger: {
             trigger: "#page3-part1",
             scroller: "#main",
@@ -132,46 +129,53 @@ function navAnimation() {
             end: "top 0%"
         }
     })
-    gsap.to(".bars", {
-        // fill: "#000",
-        backgroundColor: "#000",
-        // color: '#000',
-        scrollTrigger: {
-            trigger: "#page3-part1",
-            scroller: "#main",
-            start: "top 10%",
-            scrub: .1,
-            end: "top 0%"
-        }
-    })
-    gsap.to("#nav-part2>h4", {
+    navtl.to(".logo,svg", {
         fill: "#000",
-        scrollTrigger: {
-            trigger: "#page3-part1",
-            scroller: "#main",
-            start: "top 10%",
-            scrub: .1,
-            end: "top 0%"
-        }
+        color: '#000'
+    },"nav")
+    navtl.to("#nav-part2>h4", {
+        color: '#000'
+    })
+    navtl.to(".bars", {
+        backgroundColor: "#000"
+    })
+    navtl.to("#nav-part2>h4", {
+        fill: "#000"
     })
 
-    var grownav = 0
-    setInterval(function () {
+    var bars = document.querySelectorAll(".bars");
+    var musicbar = document.querySelector("#music-bar");
+    var grownav = 0;
+    var navint = setInterval(function () {
         if (grownav < 120) {
-            grownav += Math.floor(Math.random() * 7)
+            grownav += Math.floor(Math.random() * 7);
             gsap.to(".bars", {
                 height: grownav + `%`,
                 stagger: 1
-            })
+            });
+        } else {
+            grownav = 0;
         }
-        else {
-            console.log("lol")
-            grownav = 0
+    }, 40);
+    
+    musicbar.addEventListener("click", function () {
+        if (grownav !== 120) {
+            clearInterval(navint);
+            grownav = 0;
+            gsap.to(".bars", {
+                height: `50%`,
+                stagger: 1
+            });
+            console.log("clicked");
+            console.log(grownav);
+        } else {
+            grownav = 0;
         }
-    }, 40)
+    });
+    
 
 }
-navAnimation();
+navAnimations();
 // // This is for video animation of page2
 gsap.to("#page2 video", {
     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",

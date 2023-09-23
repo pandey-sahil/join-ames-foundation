@@ -67,16 +67,13 @@ body {
 }
 #music-bar .bars{
     fill: white;
-    /* height: 15%; */
+    height: 20%;
     background-color: wheat;
-    width: 2px;
+    width: 2.1px;
     transition: all linear .5s;
     animation-timing-function: ease-in-out;
 }
-#music-bar svg path{
-    height: 30px;
-    width: 50vw;
-}
+
 #nav .country {
     width: 1.3vw;
     fill: #fff;

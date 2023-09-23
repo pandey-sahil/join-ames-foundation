@@ -160,6 +160,7 @@ function navAnimations() {
     
     musicbar.addEventListener("click", function () {
         if (grownav !== 120) {
+        audio.pause();
             clearInterval(navint);
             grownav = 0;
             gsap.to(".bars", {
@@ -170,6 +171,8 @@ function navAnimations() {
             console.log(grownav);
         } else {
             grownav = 0;
+        // audio.play();
+
         }
     });
     
@@ -214,14 +217,25 @@ function textAnimation() {
         color: "#000",
         stagger: 0.1,
     })
-    tl.to("#page3-part1", {
-        transform: "translateX(-100vw)",
-        duration: 10
-    }, "anim1")
-    tl.to("#page3-part2", {
-        transform: "translateX(-100vw)",
-        duration: 10
+    tl.to("#scroller", {
+        transform: "translateX(-70%)",
+        duration: 30,
     }, "anim1")
 }
 textAnimation();
 
+function page3ImageAnimation(){
+    var tlscroll = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#scroller",
+            scroller: "#main",
+            start: "top -240%",
+            end: "top -250%",
+            // pin: true,
+            scrub:.5,
+            markers: true
+        }
+    })
+    tlscroll
+}
+// page3ImageAnimation()

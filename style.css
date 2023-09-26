@@ -21,6 +21,7 @@
     box-sizing: border-box;
     font-family: manuka;
     color: white;
+    z-index: 99;
 }
 
 html,
@@ -32,6 +33,7 @@ body {
 #main {
     overflow-x: hidden;
     overflow-y: auto;
+    /* background-color: #2b241294; */
 }
 
 
@@ -41,9 +43,10 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1vw 3vw;
-    /* background-color: red; */
+    background-color: red;
     position: fixed;
     z-index: 99;
+    mix-blend-mode: difference;
     top: -10%;
     opacity: 0;
 }
@@ -90,6 +93,36 @@ body {
     color: #fff;
 
 }
+#texturemain{
+    height: 100vh;
+    /* background-image: url(https://join.ames-foundation.com/images/bg-texture.webp);
+    background-position: center;
+    background-size: cover; */
+    width: 100vw;
+    position: fixed;
+    z-index: 9999;
+    background-color: #2b241294;
+    pointer-events: none;
+    scale: 0.8;
+    mix-blend-mode: lighten;
+}
+.texturemain{
+    height: calc(100vh - 40px);
+    height: 100vh;
+    /* margin-top: 40px; */
+    background-image: url(https://join.ames-foundation.com/images/bg-texture.webp);
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    /* position: fixed; */
+    /* opacity: ; */
+    /* z-index: 98; */
+    /* opacity: 0; */
+
+
+    pointer-events: none;
+    /* scale: 0.8; */
+}
 
 #page1 {
     height: 100vh;
@@ -98,16 +131,14 @@ body {
 
 #content {
     height: 100vh;
-    background-image: url(https://join.ames-foundation.com/images/bg-texture.webp);
+    /* background-image: url(https://join.ames-foundation.com/images/bg-texture.webp); */
     background-position: center;
     background-size: cover;
     width: 100vw;
     scale: 0.8;
     /* background-color: lightcoral; */
+    background-color: #2b241294;
     border-radius: 5px;
-}
-
-#texture {
     height: 100%;
     background-color: #2b241294;
     /* display: flex; */
@@ -116,7 +147,10 @@ body {
     padding-top: 13.5vw;
 }
 
-#texture>h1 {
+#texture {
+}
+
+#content>h1 {
     font-size: 16vw;
     color: white;
     font-weight: 100;
@@ -125,7 +159,7 @@ body {
     line-height: 18vw;
 }
 
-#texture h1>span {
+#content h1>span {
     font-weight: 900;
 }
 
@@ -277,7 +311,7 @@ body {
 #page2 #page2-text {
     height: 50vh;
     width: 100vw;
-    background-image: url(https://join.ames-foundation.com/images/bg-texture.webp);
+    /* background-image: url(https://join.ames-foundation.com/images/bg-texture.webp); */
     background-position: bottom;
     background-size: cover;
 }
@@ -459,4 +493,112 @@ body {
     left: 30%;
     height: 40vw;
     width: 80vw;
+}
+#page4{
+    height: 100vh;
+    width: 100vw;
+}
+
+#page4 {
+    height: 100vh;
+    /* background-image: url(https://join.ames-foundation.com/images/bg-texture.webp); */
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+}
+
+#texture2 {
+    height: 100%;
+    background-color: #2b241294;
+    overflow: hidden;
+    padding: 3vw;
+}
+.pg4txt{
+    overflow: hidden;
+}
+#texture2 h3 {
+    font-size: 1.3vw;
+    display: flex;
+    margin:2vw .8vw;
+    font-weight: 600;
+align-items: center;
+    font-family: montserrat;
+    gap: 5px;
+}
+
+#texture2 h3 span {
+    border: 1px solid white;
+    padding: 5px 10px;
+    color: black;
+    font-weight: 800;
+    background-color: white;
+    font-size: 1.3vw;
+    border-radius: 50%;
+    margin-right: .4vw;
+
+}
+
+#texture2 h1{
+    line-height: -3vw;
+    line-height-step: -10px;
+    text-transform: uppercase;
+    font-size: 12vw;
+    line-height: 0.88;
+    opacity: 0;
+    rotate: -30deg;
+    font-weight: 100;
+}
+#texture2 .pg4txt:nth-child(3) h1{
+    font-weight: 800;
+}
+#page5{
+    background-image: url(https://join.ames-foundation.com/images/bg-texture.webp);
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2b241294;
+    color: #f6f6f1;
+}
+#texture5 {
+    height: 100%;
+
+    overflow: hidden;
+
+
+padding: 3vw;
+}
+.elem {
+    height: 30vh;
+    border-top: 2px solid #fff;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30%;
+    width: 70%;
+    /* background-color: red; */
+}
+
+.elem h1 {
+    font-family: manuka;
+    font-size: 5vw;
+}
+
+.elem p {
+    width: 40%;
+    opacity: 0;
+    font-size: 1.06vw;
+    font-family: gilroy;
+
+}
+
+.elem:nth-last-child(1) {
+    border-bottom: 2px solid #fff;
+
+}
+
+#page5 img {
+    position: absolute;
+    left: 8%;
 }

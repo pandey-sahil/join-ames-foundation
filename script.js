@@ -39,9 +39,17 @@ function loco() {
 
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
+
+
+    gsap.set("body,#main", {
+        overflowY: "hidden",
+        overflowX: "hidden"
+    })
+
     locoScroll.stop();
     document.querySelector("#timer button").addEventListener("click", function () {
         locoScroll.start();
+
     })
 }
 loco();
@@ -76,6 +84,9 @@ function countdown() {
         // locoScroll.start();
         document.querySelector("#content,#texture").style.borderRadius = "0"
         document.querySelector(".poster").style.display = "initial"
+        gsap.to("#main", {
+            overflowY: "auto"
+        })
         gsap.to("#pg1-left-text", {
             display: "initial",
             opacity: 1,
@@ -110,6 +121,10 @@ function countdown() {
             scale: 1,
             duration: 0.5
         })
+        gsap.to("#texturemain", {
+            scale: 1,
+            duration: 0.5
+        })
         gsap.to("#timer", {
             opacity: 0
         });
@@ -132,7 +147,7 @@ function navAnimations() {
     navtl.to(".logo,svg", {
         fill: "#000",
         color: '#000'
-    },"nav")
+    }, "nav")
     navtl.to("#nav-part2>h4", {
         color: '#000'
     })
@@ -142,6 +157,28 @@ function navAnimations() {
     navtl.to("#nav-part2>h4", {
         fill: "#000"
     })
+    var nav2tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#page4",
+            scroller: "#main",
+            start: "top -350%",
+            scrub: .1,
+            end: "top -400%"
+        }
+    })
+    nav2tl.to(".logo,svg", {
+        fill: "#fff",
+        color: '#fff'
+    }, "nav2")
+    nav2tl.to("#nav-part2>h4", {
+        color: '#fff'
+    }, "nav2")
+    nav2tl.to(".bars", {
+        backgroundColor: "#fff"
+    }, "nav2")
+    nav2tl.to("#nav-part2>h4", {
+        fill: "#fff"
+    }, "nav2")
 
     var bars = document.querySelectorAll(".bars");
     var musicbar = document.querySelector("#music-bar");
@@ -157,10 +194,10 @@ function navAnimations() {
             grownav = 0;
         }
     }, 40);
-    
+
     musicbar.addEventListener("click", function () {
         if (grownav !== 120) {
-        audio.pause();
+            audio.pause();
             clearInterval(navint);
             grownav = 0;
             gsap.to(".bars", {
@@ -171,11 +208,11 @@ function navAnimations() {
             console.log(grownav);
         } else {
             grownav = 0;
-        // audio.play();
+            // audio.play();
 
         }
     });
-    
+
 
 }
 navAnimations();
@@ -224,7 +261,7 @@ function textAnimation() {
 }
 textAnimation();
 
-function page3ImageAnimation(){
+function page3ImageAnimation() {
     var tlscroll = gsap.timeline({
         scrollTrigger: {
             trigger: "#scroller",
@@ -232,10 +269,89 @@ function page3ImageAnimation(){
             start: "top -240%",
             end: "top -250%",
             // pin: true,
-            scrub:.5,
+            scrub: .5,
             markers: true
         }
     })
     tlscroll
 }
 // page3ImageAnimation()
+var page4txt = document.querySelectorAll(".pg4txt h1");
+page4txt.forEach(function (elem) {
+    gsap.set(".pg4txt h1", {
+        y: 80
+    })
+    gsap.to(elem, {
+        y: 0,
+        rotate: `0deg`,
+        stagger: 1,
+        opacity: 1,
+        scrollTrigger: {
+            trigger: "#page4",
+            scroller: "#main",
+            start: "top 20%",
+            end: "top 0%",
+            // pin: true,
+            scrub: .2,
+            markers: true
+        }
+    })
+
+});
+
+function page5Animation() {
+
+    var tl3 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#page5",
+            scroller: "#main",
+            start: "top 0",
+            end: "top -200%",
+            scrub: true,
+            pin: true
+        }
+    })
+    gsap.set("#elem1 p",{
+        opacity:1
+
+    })
+    gsap.set("#elem1",{
+        opacity:1
+
+    })
+
+    tl3.to("#page5 img", {
+        y: 200,
+        duration:5
+    })
+        .to("#page5 #elem1", {
+            opacity: 0.5
+        }, "lol")
+        .to("#page5 #elem1 p", {
+            opacity: 0
+        }, "lol")
+        .to("#page5 #elem2", {
+            opacity: 1
+        }, "lol")
+        .to("#page5 #elem2 p", {
+            opacity: 1
+        }, "lol")
+        .to("#page5 img", {
+            y: 440,
+            duration:5
+        })
+        .to("#elem2", {
+            opacity: 0.5
+        })
+        .to("#elem2 p", {
+            opacity: 0
+        })
+        .to("#elem3", {
+            opacity: 1
+        })
+        .to("#elem3 p", {
+            opacity: 1
+        })
+
+};
+page5Animation();

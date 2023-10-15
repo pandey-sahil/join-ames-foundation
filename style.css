@@ -43,10 +43,10 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1vw 3vw;
-    background-color: red;
+    /* background-color: red; */
     position: fixed;
-    z-index: 99;
-    mix-blend-mode: difference;
+    z-index: 999;
+    /* mix-blend-mode: difference; */
     top: -10%;
     opacity: 0;
 }
@@ -140,7 +140,6 @@ body {
     background-color: #2b241294;
     border-radius: 5px;
     height: 100%;
-    background-color: #2b241294;
     /* display: flex; */
     border-radius: 5px;
     padding: 3vw;
@@ -562,7 +561,7 @@ align-items: center;
 }
 #texture5 {
     height: 100%;
-
+    background-color: #2b241294;
     overflow: hidden;
 
 
